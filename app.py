@@ -1,7 +1,7 @@
 import subprocess
 import os
 import uuid
-from comfy_utils import start_comfyui_background, check_comfyui, load_workflow, prompt_update_workflow, send_comfyui_request, get_img_file_path, image_to_base64
+from comfy_utils import start_comfyui, check_comfyui, load_workflow, prompt_update_workflow, send_comfyui_request, get_img_file_path, image_to_base64
 
 class InferlessPythonModel:
     def initialize(self):
@@ -15,7 +15,7 @@ class InferlessPythonModel:
         self.server_address = "127.0.0.1:8188"
         self.client_id = str(uuid.uuid4())
         
-        start_comfyui_background()
+        start_comfyui()
         self.ws = check_comfyui(self.server_address,self.client_id)
 
     def infer(self, inputs):
