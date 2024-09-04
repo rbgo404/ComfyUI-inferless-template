@@ -16,7 +16,7 @@ configuration:
   # if you want to use a custom volume, add the volume id and name below,
   # you can find it by running `inferless volume list` or create one with `inferless volume create -n {VOLUME_NAME}`
   # NOTE: this is not yet supported for Serverless
-  custom_volume_id: ''
+  custom_volume_id: '33213064-731b-4dcf-9cf4-24c78456bd69'
   custom_volume_name: ''
 
   gpu_type: A100
