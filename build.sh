@@ -1,4 +1,4 @@
-VOL_DIR="/opt/tritonserver"
+VOL_DIR="/var/nfs-mount/ComfyUI-VOL"
 COMFY_DIR="$VOL_DIR/ComfyUI"
 # Check if the ComfyUI directory exists
 if [ ! -d "$COMFY_DIR" ]; then
