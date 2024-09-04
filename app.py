@@ -5,7 +5,7 @@ from comfy_utils import start_comfyui_background, check_comfyui, load_workflow, 
 
 class InferlessPythonModel:
     def initialize(self):
-        self.directory_path = "/opt/tritonserver"
+        self.directory_path = "/var/nfs-mount/ComfyUI-VOL"
         
         if not os.path.exists(self.directory_path+"/ComfyUI"):
             subprocess.run(["wget", "https://github.com/rbgo404/ComfyUI-inferless-template/raw/main/build.sh"])
