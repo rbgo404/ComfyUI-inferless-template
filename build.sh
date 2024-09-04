@@ -15,7 +15,7 @@ fi
 mkdir -p "$COMFY_DIR/models/unet"
 mkdir -p "$COMFY_DIR/models/clip"
 mkdir -p "$COMFY_DIR/models/vae"
-
+mkdir -p "$VOL_DIR/workflows"
 # Function to download file with progress bar if it doesn't exist
 download_file() {
     local url=$1
