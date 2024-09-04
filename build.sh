@@ -1,5 +1,5 @@
-COMFY_DIR="/opt/tritonserver/ComfyUI"
-
+VOL_DIR="/opt/tritonserver"
+COMFY_DIR="$VOL_DIR/ComfyUI"
 # Check if the ComfyUI directory exists
 if [ ! -d "$COMFY_DIR" ]; then
     echo "ComfyUI directory not found. Cloning repository..."
@@ -50,4 +50,6 @@ download_file "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/
 # Download VAE model without authorization header
 download_file "https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors" "$COMFY_DIR/models/vae/ae.safetensors"
 
+# Download the workflow files
+download_file "https://github.com/rbgo404/ComfyUI-inferless-template/raw/main/workflows/flux_workflow.json" "$VOL_DIR/workflow/flux_workflow.json"
 echo "All downloads completed!"
