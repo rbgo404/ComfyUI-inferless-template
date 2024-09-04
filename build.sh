@@ -51,5 +51,5 @@ download_file "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/
 download_file "https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors" "$COMFY_DIR/models/vae/ae.safetensors"
 
 # Download the workflow files
-download_file "https://github.com/rbgo404/ComfyUI-inferless-template/raw/main/workflows/flux_workflow.json" "$VOL_DIR/workflow/flux_workflow.json"
+download_file "https://github.com/rbgo404/ComfyUI-inferless-template/raw/main/workflows/flux_workflow.json" "$VOL_DIR/workflows/flux_workflow.json"
 echo "All downloads completed!"
