@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.DEBUG)
 # Change volume here
 COMFYUI_DIR = "/var/nfs-mount/ComfyUI-VOL-latest/ComfyUI"
 
-def start_comfyui_background():
+def start_comfyui():
     try:
         process = subprocess.Popen(
             [sys.executable, "main.py"],
