@@ -9,6 +9,8 @@ import websocket
 import threading
 import sys
 import base64
+import requests
+import psutil
 
 logging.basicConfig(level=logging.DEBUG)
 # Change volume here
