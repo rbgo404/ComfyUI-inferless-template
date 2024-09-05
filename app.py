@@ -1,28 +1,9 @@
 import subprocess
 import os
 import uuid
-from comfy_utils import start_comfyui, check_comfyui, load_workflow, prompt_update_workflow, send_comfyui_request, get_img_file_path, image_to_base64
+from comfy_utils import run_comfyui_in_background, check_comfyui, load_workflow, prompt_update_workflow, send_comfyui_request, get_img_file_path, image_to_base64, stop_server_on_port, is_comfyui_running
 import requests
 import psutil
-
-def stop_server_on_port(port):
-    for connection in psutil.net_connections():
-        if connection.laddr.port == port:
-            process = psutil.Process(connection.pid)
-            process.terminate()
-            print(f"Stopped server running on port {port}")
-            return
-    print(f"No server found running on port {port}",flush=True)
-
-
-def is_comfyui_running(server_address="127.0.0.1:8188"):
-
-    try:
-        response = requests.get(f"http://{server_address}/", timeout=5)
-        return response.status_code == 200
-    except requests.RequestException:
-        return False
-
 
 class InferlessPythonModel:
     def initialize(self):
@@ -38,13 +19,9 @@ class InferlessPythonModel:
         self.client_id = str(uuid.uuid4())
         
         if is_comfyui_running(self.server_address):
-            print("ComfyUI is not running. Starting ComfyUI...")
             stop_server_on_port(8188)
-            start_comfyui()
-        else:
-
-            print("ComfyUI is not running. Start start_comfyui().")
-            start_comfyui()
+            
+        run_comfyui_in_background()
         self.ws = check_comfyui(self.server_address,self.client_id)
 
     def infer(self, inputs):
