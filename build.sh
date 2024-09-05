@@ -4,7 +4,7 @@ COMFY_DIR="$VOL_DIR/ComfyUI"
 # Check if the ComfyUI directory exists
 if [ ! -d "$COMFY_DIR" ]; then
     echo "ComfyUI directory not found. Cloning repository..."
-    cd /var/nfs-mount/ComfyUI-VOL
+    cd "$VOL_DIR"
     git clone https://github.com/comfyanonymous/ComfyUI.git && cd ComfyUI && git pull
     pip install -r requirements.txt
 else
