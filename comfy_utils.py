@@ -125,3 +125,21 @@ def image_to_base64(image_path):
     with open(image_path, "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read())
         return encoded_string.decode('utf-8')
+        
+def stop_server_on_port(port):
+    for connection in psutil.net_connections():
+        if connection.laddr.port == port:
+            process = psutil.Process(connection.pid)
+            process.terminate()
+            print(f"Stopped server running on port {port}")
+            return
+    print(f"No server found running on port {port}",flush=True)
+
+
+def is_comfyui_running(server_address="127.0.0.1:8188"):
+
+    try:
+        response = requests.get(f"http://{server_address}/", timeout=5)
+        return response.status_code == 200
+    except requests.RequestException:
+        return False
