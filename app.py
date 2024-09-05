@@ -24,7 +24,6 @@ class InferlessPythonModel:
         workflow = load_workflow(self.directory_path,workflow_name)
         prompt = prompt_update_workflow(workflow_name,workflow,prompt)
         try:
-            send_comfyui_request(self.ws, prompt, self.server_address,self.client_id)
             prompt_id = send_comfyui_request(self.ws, prompt, self.server_address,self.client_id)
             file_path = get_img_file_path(self.server_address,prompt_id)
             image_base64 = image_to_base64(file_path)
