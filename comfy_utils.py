@@ -11,7 +11,8 @@ import sys
 import base64
 
 logging.basicConfig(level=logging.DEBUG)
-COMFYUI_DIR = "/opt/tritonserver/ComfyUI"
+# Change volume here
+COMFYUI_DIR = "/var/nfs-mount/ComfyUI-VOL-latest/ComfyUI"
 
 def start_comfyui():
     try:
