@@ -41,7 +41,7 @@ download_file() {
 AUTH_HEADER="Authorization: Bearer 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"
 
 # Download UNET model with authorization header
-download_file "https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/flux1-dev.safetensors" "$COMFY_DIR/models/unet/flux1-dev.safetensors" "$AUTH_HEADER"
+# download_file "https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/flux1-dev.safetensors" "$COMFY_DIR/models/unet/flux1-dev.safetensors" "$AUTH_HEADER"
 
 # Download CLIP models without authorization header
 download_file "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors" "$COMFY_DIR/models/clip/t5xxl_fp16.safetensors"
