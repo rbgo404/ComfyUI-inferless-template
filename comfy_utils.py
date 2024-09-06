@@ -134,9 +134,6 @@ def stop_server_on_port(port):
             process = psutil.Process(connection.pid)
             process.terminate()
             print(f"Stopped server running on port {port}")
-            return
-    print(f"No server found running on port {port}",flush=True)
-
 
 def is_comfyui_running(server_address="127.0.0.1:8188"):
 
