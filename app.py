@@ -8,7 +8,7 @@ import psutil
 class InferlessPythonModel:
     def initialize(self):
         # Change volume here
-        self.directory_path = "/var/nfs-mount/ComfyUI-VOL-latest"
+        self.directory_path = "/var/nfs-mount/comfy-new"
         
         if not os.path.exists(self.directory_path+"/ComfyUI"):
             subprocess.run(["wget", "https://github.com/rbgo404/ComfyUI-inferless-template/raw/test-comfyui/build.sh"])
