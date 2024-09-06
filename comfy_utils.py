@@ -14,7 +14,7 @@ import psutil
 
 logging.basicConfig(level=logging.DEBUG)
 # Change volume here
-COMFYUI_DIR = "/var/nfs-mount/ComfyUI-VOL-latest/ComfyUI"
+COMFYUI_DIR = "/var/nfs-mount/comfy-new/ComfyUI"
 
 def start_comfyui():
     try:
