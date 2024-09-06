@@ -51,6 +51,9 @@ download_file "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/
 # Download VAE model without authorization header
 download_file "https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors" "$COMFY_DIR/models/vae/ae.safetensors"
 
+# Download SD1.5 for workflow-2
+download_file "https://huggingface.co/autismanon/modeldump/resolve/main/dreamshaper_8.safetensors" "$COMFY_DIR/models/checkpoints/dreamshaper_8.safetensors"
+
 # Download the workflow files
 download_file "https://github.com/rbgo404/ComfyUI-inferless-template/raw/main/workflows/flux_workflow.json" "$VOL_DIR/workflows/flux_workflow.json"
 echo "All downloads completed!"
