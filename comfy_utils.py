@@ -70,9 +70,9 @@ def load_workflow(directory_path,workflow_name):
         return json.load(file)
 
 def prompt_update_workflow(workflow_name,workflow,prompt):
-    if workflow_name == "flux_workflow":
-        workflow["6"]["inputs"]["text"] = prompt
-        return workflow
+    # if workflow_name == "flux_workflow":
+    workflow["6"]["inputs"]["text"] = prompt
+    return workflow
     
 def send_comfyui_request(ws, prompt, server_address,client_id):
     p = {"prompt": prompt,"client_id": client_id}
