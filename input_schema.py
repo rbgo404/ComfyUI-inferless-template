@@ -9,6 +9,6 @@ INPUT_SCHEMA = {
         'datatype': 'STRING',
         'required': True,
         'shape': [1],
-        'example': ["flux_workflow"]
+        'example': ["sd1-5_workflow"]
     }
 }
